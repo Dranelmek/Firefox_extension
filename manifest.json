@@ -1,0 +1,8 @@
+{
+    "manifest_version": 2,
+    "name": "Twitch mini exploiter",
+    "version": "1.0",
+
+    "description": "Circumvents Twitch ads without blocking them by muting the player, poping out the stream prview and unmuting the popped out window.",
+    
+}
