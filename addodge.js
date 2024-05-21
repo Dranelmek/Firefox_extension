@@ -1,5 +1,6 @@
 document.title = "Dodging ads!";
 
+// sourced from: "https://github.com/1polygon/ad-mute/blob/main/twitch.js"
 class TwitchAdMute {
     constructor() {
         this.ad = false;
