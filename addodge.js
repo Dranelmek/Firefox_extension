@@ -13,6 +13,7 @@ class TwitchAdMute {
                         if (!this.ad) {
                             this.setMuted(true);
                             this.ad = true;
+                            this.popOutPlayer()
                         }
                     } else if (this.ad) {
                         this.setMuted(false);
@@ -36,6 +37,17 @@ class TwitchAdMute {
         const video = document.querySelector("video");
         if (video) {
             video.muted = muted;
+        }
+    }
+
+    popOutPlayer() {
+        const videoPlayers = document.querySelectorAll("video")
+        const [playerWidth, playerHeight] = [videoPlayers[0].offsetWidth, videoPlayers[0].offsetHeight]
+        console.log([playerWidth, playerHeight])
+        if (videoPlayers.length > 1) {
+            const miniPlayer = videoPlayers[1]
+            console.log(miniPlayer)
+            miniPlayer.requestPictureInPicture() // requestPictureInPicture seemingly does not work in firefox
         }
     }
 }
