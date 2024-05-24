@@ -1,19 +1,20 @@
 {
     "manifest_version": 2,
-    "name": "Twitch mini exploiter",
-    "version": "1.0",
+    "name": "Twitch miniplayer exploiter",
+    "version": "0.3.2",
 
     "description": "Circumvents Twitch ads without blocking them by muting the player, poping out the stream prview and unmuting the popped out window.",
     
     "icons": {
         "48": "icons/logo-48.png",
         "96": "icons/logo-96.png"
-      },
+    },
+    
 
     "content_scripts": [
         {
-            "matches": ["*://*.twitch.tv/*"],
-            "js": ["addodge.js"]
+            "js": ["addodge.js"],
+            "matches": ["*://*.twitch.tv/*"]
         }
     ]
 } 

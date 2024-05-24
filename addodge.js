@@ -4,6 +4,7 @@ document.title = "Dodging ads!";
 class TwitchAdMute {
     constructor() {
         this.ad = false;
+        console.log(`Ad dodger launched`)
 
         // Observe changes inside the document body and mute player when ads are playing
         this.observer = new MutationObserver(mutationsList => {
@@ -43,12 +44,13 @@ class TwitchAdMute {
     popOutPlayer() {
         const videoPlayers = document.querySelectorAll("video")
         const [playerWidth, playerHeight] = [videoPlayers[0].offsetWidth, videoPlayers[0].offsetHeight]
-        console.log([playerWidth, playerHeight])
-        if (videoPlayers.length > 1) {
-            const miniPlayer = videoPlayers[1]
-            console.log(miniPlayer)
-            miniPlayer.requestPictureInPicture() // requestPictureInPicture seemingly does not work in firefox
-        }
+        console.log(`large player dimensions: ${[playerWidth, playerHeight]}`)
+        
+        // if (videoPlayers.length > 1) {
+        //     const miniPlayer = videoPlayers[1]
+        //     console.log(`mini player: ${miniPlayer}`)
+        //     miniPlayer.requestPictureInPicture() // requestPictureInPicture does not work in firefox
+        // }
     }
 }
 
