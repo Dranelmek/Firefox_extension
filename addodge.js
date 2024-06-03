@@ -11,6 +11,7 @@ class TwitchAdMute {
             for (const mutation of mutationsList) {
                 if (mutation.type === 'childList') {
                     if (this.isAdPlaying()) {
+                        const [main, mini] = document.querySelectorAll("video");
                         if (!this.ad) {
                             this.setMuted(true);
                             this.ad = true;
@@ -42,9 +43,14 @@ class TwitchAdMute {
     }
 
     popOutPlayer() {
-        const videoPlayers = document.querySelectorAll("video")
-        const [playerWidth, playerHeight] = [videoPlayers[0].offsetWidth, videoPlayers[0].offsetHeight]
-        console.log(`large player dimensions: ${[playerWidth, playerHeight]}`)
+        const [main, mini] = document.querySelectorAll("video");
+        console.log(main.volume)
+        if (mini) {
+            mini.muted = false;
+            mini.volume = 0.1;
+        }
+
+
         
         // if (videoPlayers.length > 1) {
         //     const miniPlayer = videoPlayers[1]
