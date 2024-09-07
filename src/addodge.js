@@ -47,7 +47,9 @@ class TwitchAdMute {
         console.log(main.volume)
         if (mini) {
             mini.muted = false;
-            mini.volume = 0.1;
+            console.log(`old mini vol: ${mini.volume}`)
+            mini.volume = main.volume;
+            console.log(`main vol: ${main.volume} new mini vol: ${mini.volume}`)
         }
 
 

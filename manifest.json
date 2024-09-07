@@ -1,15 +1,20 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Twitch miniplayer exploiter",
-    "version": "0.4.0",
-
     "description": "Circumvents Twitch ads without blocking them by muting the player, poping out the stream prview and unmuting the popped out window. Due to firefox not supporting programatic PiP this is an attempt at an alternate solution that simply unmutes the miniplayer",
-    
+    "version": "0.4.0",
+   
     "icons": {
         "48": "icons/logo-48.png",
         "96": "icons/logo-96.png"
     },
-    
+    "action": {
+        "default_title": "Twitch Ad Dodger"
+    },
+    "permissions": [],
+    "host_permissions": [
+        "*://*/*"
+    ],
 
     "content_scripts": [
         {
@@ -17,4 +22,5 @@
             "matches": ["*://*.twitch.tv/*"]
         }
     ]
-} 
+}
+
